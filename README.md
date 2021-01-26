@@ -25,7 +25,10 @@ All frontend work is done using Java Server Pages, along with Java Standard Tag 
 
 ## To Build/Run
 
- 1. `git clone https://github.com/philFernandez/Capstone_HCL.git`
- 2. `cd Capstone_HCL`
- 3. `./mvnw spring-boot:run`
- 4. 🤓
+- `git clone https://github.com/philFernandez/Capstone_HCL.git`
+- `cd Capstone_HCL`
+- On Mac or Linux
+	-  `./mvnw spring-boot:run` 
+- On Windows
+	- `.\mvnw.cmd spring-boot:run`
+- 🤓
