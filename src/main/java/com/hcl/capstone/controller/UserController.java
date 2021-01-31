@@ -32,6 +32,11 @@ public class UserController {
         return new ModelAndView("login", "user", new User());
     }
 
+    @GetMapping("/home")
+    public String home() {
+        return "home";
+    }
+
     
 
 

@@ -22,7 +22,6 @@
   <body>
     <%@ include file="Header.html" %>
     <div class="container">
-
       <h1 class="display-3 pb-5 pt-3" align="center">Login</h1>
       <form:form modelAttribute="user" class="form-control p-4">
         <form:label path="username" class="form-label">User Name</form:label>
