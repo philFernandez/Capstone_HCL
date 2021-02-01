@@ -33,11 +33,12 @@ public class User {
     private String email;
 
     @OneToMany(mappedBy = "user")
-    private Set<Order> orders = new HashSet<>();
+    private Set<Order> orders;
 
     @ManyToMany
     @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles;
+
 
     public User(String username, String password, String email) {
         setPassword(password);
@@ -92,11 +93,6 @@ public class User {
 
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
-    }
-
-    // Not a mutator
-    public boolean addToOrderHistory(Order order) {
-        return orders.add(order);
     }
     
 }

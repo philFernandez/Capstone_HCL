@@ -1,6 +1,5 @@
 package com.hcl.capstone.service;
 
-import com.hcl.capstone.model.Order;
 import com.hcl.capstone.model.User;
 import com.hcl.capstone.model.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,9 +31,4 @@ public class UserService {
         return repository.save(user);
     }
 
-    public boolean addOrder(User user, Order order) {
-        boolean orderAdded = user.addToOrderHistory(order);
-        repository.save(user);
-        return orderAdded;
-    }
 }
