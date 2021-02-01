@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @Controller
@@ -24,12 +25,13 @@ public class UserController {
     @PostMapping("/register")
     public String registerNew(@ModelAttribute User user) {
         repository.save(user);
-        return ("redirect:/");
+        return ("redirect:/login");
     }
 
-    @GetMapping("/")
-    public ModelAndView login() {
-        return new ModelAndView("login", "user", new User());
+    @RequestMapping("/login")
+    public String login() {
+        // return new ModelAndView("login", "user", new User());
+        return "login";
     }
 
     @GetMapping("/home")
@@ -37,7 +39,10 @@ public class UserController {
         return "home";
     }
 
-    
+    @GetMapping("/403")
+    public String error403() {
+        return "403";
+    }
 
 
 }

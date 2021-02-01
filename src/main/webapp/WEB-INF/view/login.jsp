@@ -1,37 +1,43 @@
-<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-      crossorigin="anonymous"
-    ></script>
-    <title>Register</title>
-  </head>
-  <body>
-    <%@ include file="Header.html" %>
-    <div class="container">
-      <h1 class="display-3 pb-5 pt-3" align="center">Login</h1>
-      <form:form modelAttribute="user" class="form-control p-4">
-        <form:label path="username" class="form-label">User Name</form:label>
-        <form:input placeholder="John Doe" path="username" type="text" class="form-control" required="required" />
-        <br>
-        <form:label path="password" class="form-label">Password</form:label>
-        <form:input placeholder="Enter a password" path="password" type="password" class="form-control" required="required" />
-        <br><br>
-        <button class="btn btn-success">Register</button>
-      </form:form>
+<html>
+<head>
+<title>Spring Security Example</title>
+</head>
+<body class="security-app">
+<div class="details">
+  <h2>Spring Security - JDBC Authentication</h2>
+</div>
+
+<form action="/login" method="post">
+
+  <div class="lc-block">
+    <div>
+      <input type="text" class="style-4" name="username"
+        placeholder="User Name" />
     </div>
-  </body>
+    <div>
+      <input type="password" class="style-4" name="password"
+        placeholder="Password" />
+    </div>
+    <div>
+      <input type="submit" value="Sign In" class="button red small" />
+    </div>
+    <c:if test="${param.error ne null}">
+      <div class="alert-danger">Invalid username and password.</div>
+    </c:if>
+    <c:if test="${param.logout ne null}">
+      <div class="alert-normal">You have been logged out.</div>
+    </c:if>
+  </div>
+  <input type="hidden" name="${_csrf.parameterName}"
+    value="${_csrf.token}" />
+</form>
+
+</body>
 </html>
