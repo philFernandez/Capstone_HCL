@@ -7,8 +7,9 @@
  - Spring Boot/MVC
  - Spring Data JPA
  - Spring Session
- - My SQL
- 
+ - Spring Security
+ - MySQL
+
  **Frontend**
  - JSP
  - JSTL
@@ -32,7 +33,7 @@ All frontend work is done using Java Server Pages, along with Java Standard Tag 
 - `git clone https://github.com/philFernandez/Capstone_HCL.git`
 - `cd Capstone_HCL`
 - On Mac or Linux
-	-  `./mvnw spring-boot:run` 
+	-  `./mvnw spring-boot:run`
 - On Windows
 	- `.\mvnw.cmd spring-boot:run`
 - 🤓
