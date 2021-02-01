@@ -1,0 +1,22 @@
+  <h1 class="display-1" align="center">Products</h1>
+  <div class="container border border-3 p-4">
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link all-products" href="/products">All Products</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link instruments" href="/products/instruments">Instruments</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link accessories" href="/products/accessories">Accessories</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link vinyl" href="/products/vinyl">Vinyl</a>
+      </li>
+    </ul>
+    <ul>
+    <c:forEach var="instrument" items="${instrumentList}">
+      <li>${instrument.name}</li>
+    </c:forEach>
+    </ul>
+  </div> 

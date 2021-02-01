@@ -1,21 +1,24 @@
 package com.hcl.capstone.controller;
 
+import com.hcl.capstone.model.ProductRepository;
 import com.hcl.capstone.model.User;
 import com.hcl.capstone.model.UserRepository;
+import com.hcl.capstone.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @Controller
-public class UserController {
+public class MainController {
 
     @Autowired
-    private UserRepository repository;
+    private UserRepository userRepo;
+    @Autowired
+    private ProductService productService;
 
     @GetMapping("/register")
     public ModelAndView register() {
@@ -24,7 +27,7 @@ public class UserController {
 
     @PostMapping("/register")
     public String registerNew(@ModelAttribute User user) {
-        repository.save(user);
+        userRepo.save(user);
         return ("redirect:/login");
     }
 
@@ -35,7 +38,6 @@ public class UserController {
 
     @PostMapping("/login")
     public String loggedIn() {
-        // return new ModelAndView("login", "user", new User());
         return "login";
     }
 
@@ -49,5 +51,16 @@ public class UserController {
         return "403";
     }
 
+    @GetMapping("/products")
+    public ModelAndView products() {
+        return new ModelAndView("products", "productList",
+                productService.getProductStock());
+    }
+
+    @GetMapping("/products/instruments")
+    public ModelAndView instruments() {
+        return new ModelAndView("instruments", "instrumentList",
+                productService.getInstruments());
+    }
 
 }
