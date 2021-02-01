@@ -27,19 +27,25 @@ public class Product {
     @Column(name = "PRODUCT_ID") // foreign key for one{order} -> many{product}
     private Long productId;
     private String name;
-    private String category;
-    private String genre;
+    private Category category;
+    private Genre genre;
     private String description;
     private double price;
+    private int quantity;
 
-    public Product(Long productId, String name, String category, String genre,
-            String description, double price) {
+    public Product(Long productId, String name, Category category,
+            String description, double price, int quantity) {
         this.productId = productId;
         this.name = name;
         this.category = category;
-        this.genre = genre;
         this.description = description;
         this.price = price;
+        this.quantity = quantity;
+    }
+    public Product(Long productId, String name, Category category, Genre genre, 
+            String description, double price, int quantity) {
+        this(productId, name, category, description, price, quantity);
+        this.genre = genre;
     }
 
 }

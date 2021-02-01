@@ -39,14 +39,13 @@ public class Order {
     private List<Product> products;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "UUID")
+    @JoinColumn(name = "user_id")
     private User user;
 
-    public Order(Date orderDate, double taxRate, List<Product> products,
+    public Order(Date orderDate, double taxRate,
             User user) {
         this.orderDate = orderDate;
         this.taxRate = taxRate;
-        this.products = products;
         this.user = user;
     }
 
