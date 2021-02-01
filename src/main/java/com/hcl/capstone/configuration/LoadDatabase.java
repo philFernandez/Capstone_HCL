@@ -43,16 +43,34 @@ public class LoadDatabase {
 
         Product guitar = new Product(order1.getId(), "Guitar", Category.INSTRUMENT,
                 "6 string guitar", 149.99, 12);
-        Product bassGuitar = new Product(order1.getId(), "Bass Guitar", Category.INSTRUMENT,
-                "4 string bass guitar", 199.99, 10);
+        Product bassGuitar =
+                new Product(order1.getId(), "Bass Guitar", Category.INSTRUMENT,
+                        "4 string bass guitar", 199.99, 10);
         Product flute = new Product(order1.getId(), "Wood Flute", Category.INSTRUMENT,
                 "Flute of wood", 599.99, 6);
-        Product jimiHendrix = new Product(order1.getId(), "Jimi Hendrix", Category.VINYL, Genre.ROCK,
-                "Jimi Hendrix Record: 72 rpm", 12.49, 100);
-        Product theDoors1 = new Product(order1.getId(), "The Doors CD", Category.DISK, Genre.ROCK,
-                "Doors Compact Disc", 12.49, 100);
+        Product jimiHendrix =
+                new Product(order1.getId(), "Jimi Hendrix", Category.VINYL, Genre.ROCK,
+                        "Jimi Hendrix Record: 72 rpm", 12.49, 100);
+        Product theDoors1 =
+                new Product(order1.getId(), "The Doors CD", Category.DISK, Genre.ROCK,
+                        "Doors Compact Disc", 12.49, 100);
         Product bbKing =
-                new Product(order1.getId(), "BBking's Greatest Hits", Category.DISK, Genre.BLUES,
+                new Product(order1.getId(), "BBking's Greatest Hits", Category.DISK,
+                        Genre.BLUES,
+                        "BBKing Compact Disc", 15.49, 100);
+        Product guitarStock = new Product("Guitar", Category.INSTRUMENT,
+                "6 string guitar", 149.99, 12);
+        Product bassGuitarStock = new Product("Bass Guitar", Category.INSTRUMENT,
+                "4 string bass guitar", 199.99, 10);
+        Product fluteStock = new Product("Wood Flute", Category.INSTRUMENT,
+                "Flute of wood", 599.99, 6);
+        Product jimiHendrixStock =
+                new Product("Jimi Hendrix", Category.VINYL, Genre.ROCK,
+                        "Jimi Hendrix Record: 72 rpm", 12.49, 100);
+        Product theDoors1Stock = new Product("The Doors CD", Category.DISK, Genre.ROCK,
+                "Doors Compact Disc", 12.49, 100);
+        Product bbKingStock =
+                new Product("BBking's Greatest Hits", Category.DISK, Genre.BLUES,
                         "BBKing Compact Disc", 15.49, 100);
         List<Product> order1Products = new ArrayList<>(Arrays.asList(guitar, bassGuitar,
                 flute, jimiHendrix, theDoors1, bbKing));
@@ -70,7 +88,15 @@ public class LoadDatabase {
             productRepo.save(jimiHendrix);
             productRepo.save(theDoors1);
             productRepo.save(bbKing);
+
             orderRepo.save(order1);
+
+            productRepo.save(guitarStock);
+            productRepo.save(bassGuitarStock);
+            productRepo.save(fluteStock);
+            productRepo.save(jimiHendrixStock);
+            productRepo.save(theDoors1Stock);
+            productRepo.save(bbKingStock);
 
         };
     }

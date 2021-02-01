@@ -47,5 +47,19 @@ public class Product {
         this(productId, name, category, description, price, quantity);
         this.genre = genre;
     }
+    public Product(String name, Category category,
+            String description, double price, int quantity) {
+        this.name = name;
+        this.category = category;
+        this.description = description;
+        this.price = price;
+        this.quantity = quantity;
+    }
+    public Product(String name, Category category, Genre genre, 
+            String description, double price, int quantity) {
+        this(name, category, description, price, quantity);
+        this.genre = genre;
+    }
+
 
 }
