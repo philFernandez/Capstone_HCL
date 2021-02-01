@@ -13,26 +13,22 @@ public class UserService {
     private UserRepository repository;
 
     public User registerRegularUser(String username, String password, String email) {
-        final boolean isAdmin = false;
-        User user = new User(username, password, email, isAdmin);
+        User user = new User(username, password, email);
         return registerRegularUser(user);
     }
 
     // need to do exception handling i think, if username is already taken
     public User registerRegularUser(User user) {
-        user.setAdmin(false);
         return repository.save(user);
     }
 
     public User registerAdminUser(String username, String password, String email) {
-        final boolean isAdmin = true;
-        User user = new User(username, password, email, isAdmin);
+        User user = new User(username, password, email);
         return registerRegularUser(user);
     }
 
     // need to do exception handling i think, if username is already taken
     public User registerAdminUser(User user) {
-        user.setAdmin(true);
         return repository.save(user);
     }
 
@@ -41,5 +37,4 @@ public class UserService {
         repository.save(user);
         return orderAdded;
     }
-
 }
