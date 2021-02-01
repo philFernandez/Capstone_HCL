@@ -23,6 +23,10 @@ help of Java 8 and Spring Boot.
 
 All frontend work is done using Java Server Pages, along with Java Standard Tag Library, and the Bootstrap CSS and JS libraries.
 
+## Test User and Password
+### Username `phil`
+### Password `phil`
+
 ## To Build/Run
 
 - `git clone https://github.com/philFernandez/Capstone_HCL.git`
