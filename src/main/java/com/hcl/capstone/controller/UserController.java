@@ -28,8 +28,13 @@ public class UserController {
         return ("redirect:/login");
     }
 
-    @RequestMapping("/login")
-    public String login() {
+    @GetMapping("/login")
+    public ModelAndView login() {
+        return new ModelAndView("login", "user", new User());
+    }
+
+    @PostMapping("/login")
+    public String loggedIn() {
         // return new ModelAndView("login", "user", new User());
         return "login";
     }
