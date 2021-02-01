@@ -9,6 +9,9 @@
   <meta charset="UTF-8">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Unkempt:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style/style.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
         rel="stylesheet"
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
@@ -31,27 +34,27 @@
         <ul class="nav nav-tabs">
           <li class="nav-item">
             <a class="nav-link"
-               href="/products">all products</a>
+               href="/products">All Products</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active"
-               href="/products/instruments">instruments</a>
+               href="/products/instruments">Instruments</a>
           </li>
           <li class="nav-item">
             <a class="nav-link"
-               href="/products/accessories">accessories</a>
+               href="/products/accessories">Accessories</a>
           </li>
           <li class="nav-item">
             <a class="nav-link"
-               href="/products/headphones">headphones</a>
+               href="/products/headphones">Headphones</a>
           </li>
           <li class="nav-item">
             <a class="nav-link"
-               href="/products/vinyl">vinyl</a>
+               href="/products/vinyl">Vinyl</a>
           </li>
           <li class="nav-item">
             <a class="nav-link"
-               href="/products/disks">cd's</a>
+               href="/products/disks">CD's</a>
           </li>
         </ul>
 
