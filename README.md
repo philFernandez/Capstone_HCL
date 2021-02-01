@@ -14,6 +14,9 @@
  - JSP
  - JSTL
  - Bootstrap
+ - CSS
+ - HTML
+ - JavaScript
 
 
 ----------
