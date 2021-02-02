@@ -28,7 +28,7 @@
       file="Header.html"
       %>
     <h1 class="display-1 p-3"
-        align="center">Products</h1>
+        align="center">Our Products</h1>
     <div class="container border border-3 p-4">
       <div class="container">
         <ul class="nav nav-tabs">

@@ -2,7 +2,6 @@ package com.hcl.capstone.service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.function.Consumer;
 import java.util.stream.Collectors;
 import com.hcl.capstone.model.Category;
 import com.hcl.capstone.model.Product;
