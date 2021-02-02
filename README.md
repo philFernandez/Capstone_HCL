@@ -52,7 +52,7 @@ MySql is required because of the dependencies laid out in the `pom.xml`
 but the database name, username, and password can be changed to meet 
 the needs of the person testing. All database setup beyond this is
 done automatically by the backend. Website user is added, products
-are added, etc. See [above](##Test User and Password) for default website username and password.
+are added, etc. See [above](#Test-User-and-Password) for default website username and password.
 
 
 
