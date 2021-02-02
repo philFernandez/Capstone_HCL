@@ -17,7 +17,7 @@
       integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
       crossorigin="anonymous"
     ></script>
-    <title>Register</title>
+    <title>Login</title>
   </head>
   <body>
     <%@ include file="Header.html" %>
@@ -30,7 +30,7 @@
         <form:label path="password" class="form-label">Password</form:label>
         <form:input placeholder="Enter a password" path="password" type="password" class="form-control" required="required" />
         <br><br>
-        <button class="btn btn-success">Register</button>
+        <button class="btn btn-success">Login</button>
       </form:form>
     </div>
   </body>
