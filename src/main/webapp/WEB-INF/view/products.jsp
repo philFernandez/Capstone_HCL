@@ -9,10 +9,14 @@
   <meta charset="UTF-8">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Unkempt:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/style/style.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <link rel="preconnect"
+        href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Unkempt:wght@700&display=swap"
+        rel="stylesheet">
+  <link rel="stylesheet"
+        href="/style/style.css" />
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
         rel="stylesheet"
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
@@ -73,10 +77,43 @@
               <p class="card-text">${product.category}</p>
             </div>
             <div class="container">
-              <a href="/home" class="btn btn-success d-inline">Buy <i class="bi bi-cart3"></i></a>
+              <!-- Button trigger modal -->
+              <button type="button"
+                      class="btn btn-primary"
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModal${product.id}">Buy <i class="bi bi-cart3"></i></button>
+
+              <!-- Modal -->
+              <div class="modal fade"
+                   id="exampleModal${product.id}"
+                   tabindex="-1"
+                   aria-labelledby="exampleModalLabel"
+                   aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title"
+                          id="exampleModal${product.id}">Added to cart!</h5>
+                      <button type="button"
+                              class="btn-close"
+                              data-bs-dismiss="modal"
+                              aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <p>${product.name}</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button"
+                              class="btn btn-secondary"
+                              data-bs-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <br><hr>
+          <br>
+          <hr>
         </c:forEach>
       </div>
     </div>
