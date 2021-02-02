@@ -69,7 +69,6 @@ public class MainController {
                 cartService);
     }
 
-
     @GetMapping("products/{id}")
     public ModelAndView addToCart(@PathVariable Long id) {
         cartService.addToOrder(productService.getProductByID(id));
@@ -80,6 +79,11 @@ public class MainController {
     public ModelAndView instruments() {
         return new ModelAndView("instruments", "instrumentList",
                 productService.getInstruments());
+    }
+
+    @GetMapping("/shoppingcart")
+    public ModelAndView viewCart() {
+        return new ModelAndView("shoppingcart", "cart", cartService);
     }
 
 

@@ -32,7 +32,7 @@
   <%@ include
       file="Header.html"
       %>
-    <h1 class="display-1 p-3" align="center">Shopping Cart</h1>
+    <h1 class="display-1 p-3 mb-5" align="center">Shopping Cart</h1>
     <div class="container">
       <table class="table table-dark">
         <tr>
@@ -49,9 +49,11 @@
           <td>${product.description}</td>
           <td>$${product.price}</td>
         </tr>
-
       </c:forEach>
       </table>
+
+      <a class="btn btn-success" href="/products">Continue Shopping</a>
+      <a class="btn btn-dark" href="/products">Checkout</a>
     </div>
 
 </body>

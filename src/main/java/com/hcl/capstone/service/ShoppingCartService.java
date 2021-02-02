@@ -106,6 +106,13 @@ public class ShoppingCartService {
     }
 
     public List<Product> getShoppingCart() {
+        if (order == null) {
+            try {
+                order = new Order(MyUtils.DATE_FMT.parse("02/01/2021"), 0.07, user);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+        }
         return productService.getOrderedProducts(order.getId());
     }
 
