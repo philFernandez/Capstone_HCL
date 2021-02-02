@@ -42,3 +42,17 @@ browser's DOM.
 - On Windows
 	- `.\mvnw.cmd spring-boot:run`
 - 🤓
+
+## Some Notes on Testing and Running
+
+You will need to go into `application.properties` and change the setting
+pertaining to JDBC and database to match those of your system. Currently
+This project is setup to use MySql 8, with a database called `Simpli`. 
+MySql is required because of the dependencies laid out in the `pom.xml`
+but the database name, username, and password can be changed to meet 
+the needs of the person testing. All database setup beyond this is
+done automatically by the backend. Website user is added, products
+are added, etc. See about for default website username and password.
+
+
+
