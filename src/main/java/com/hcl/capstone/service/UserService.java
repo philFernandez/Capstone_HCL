@@ -31,4 +31,9 @@ public class UserService {
         return repository.save(user);
     }
 
+    public User getUserByName(String username) {
+        return repository.findByUsername(username);
+    }
+
 }
+

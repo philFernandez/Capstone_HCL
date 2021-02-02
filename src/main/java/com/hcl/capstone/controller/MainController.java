@@ -1,9 +1,9 @@
 package com.hcl.capstone.controller;
 
-import com.hcl.capstone.model.ProductRepository;
 import com.hcl.capstone.model.User;
 import com.hcl.capstone.model.UserRepository;
 import com.hcl.capstone.service.ProductService;
+import com.hcl.capstone.service.ShoppingCartService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +19,8 @@ public class MainController {
     private UserRepository userRepo;
     @Autowired
     private ProductService productService;
+    @Autowired
+    private ShoppingCartService cartService;
 
     @GetMapping("/register")
     public ModelAndView register() {
@@ -53,8 +55,8 @@ public class MainController {
 
     @GetMapping("/products")
     public ModelAndView products() {
-        return new ModelAndView("products", "productList",
-                productService.getProductStock());
+        return new ModelAndView("products", "cart",
+                cartService);
     }
 
     @GetMapping("/products/instruments")

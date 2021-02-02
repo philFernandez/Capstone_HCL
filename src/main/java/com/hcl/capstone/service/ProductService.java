@@ -1,6 +1,8 @@
 package com.hcl.capstone.service;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.function.Consumer;
 import java.util.stream.Collectors;
 import com.hcl.capstone.model.Category;
 import com.hcl.capstone.model.Product;
@@ -15,9 +17,9 @@ public class ProductService {
     @Autowired
     private ProductRepository repository;
 
-    // Only return products that are in stock and not 
+    // Only return products that are in stock and not
     // part of a User's order history. productId is the
-    // foreign key which associates a product instance 
+    // foreign key which associates a product instance
     // with a particular order. If productId is null
     // we know the product is not in a User's order history
     public List<Product> getProductStock() {
@@ -35,4 +37,14 @@ public class ProductService {
                 .filter(product -> product.getCategory() == Category.INSTRUMENT)
                 .collect(Collectors.toList());
     }
+
+    public Product getProductByID(Long id) {
+        Optional<Product> product = repository.findById(id);
+        if (product.isPresent()) {
+            return product.get();
+        } else {
+            return null;
+        }
+    }
 }
+

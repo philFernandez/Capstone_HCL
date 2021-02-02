@@ -65,7 +65,7 @@
       </div>
       <div class="container p-4">
         <c:forEach var="product"
-                   items="${productList}">
+                   items="${cart.allProducts()}">
           <div class="card p-4 d-block"
                style="width: 18rem;">
             <img src="/img/${product.name}.jpg"
