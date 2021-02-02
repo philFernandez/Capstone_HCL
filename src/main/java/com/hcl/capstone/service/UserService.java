@@ -35,5 +35,8 @@ public class UserService {
         return repository.findByUsername(username);
     }
 
+    public void saveUser(User user) {
+        repository.save(user);
+    }
 }
 

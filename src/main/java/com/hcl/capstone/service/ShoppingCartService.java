@@ -1,10 +1,13 @@
 package com.hcl.capstone.service;
 
+import java.security.Principal;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 import com.hcl.capstone.model.Order;
 import com.hcl.capstone.model.Product;
 import com.hcl.capstone.model.User;
+import com.hcl.capstone.utils.MyUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import lombok.NoArgsConstructor;
@@ -16,10 +19,17 @@ public class ShoppingCartService {
     @Autowired
     private ProductService productService;
 
+    @Autowired
+    private UserService userService;
+
+    @Autowired
+    private OrderService orderService;
+
     private User user;
     private Order order;
     private List<Product> orderedProducts;
     private Product product;
+    private Principal principal;
 
 
     public ShoppingCartService(User user, Order order, List<Product> orderedProducts) {
@@ -63,7 +73,35 @@ public class ShoppingCartService {
         this.product = product;
     }
 
+    public Principal getPrincipal() {
+        return principal;
+    }
+
+    public void setPrincipal(Principal principal) {
+        this.principal = principal;
+    }
+
     public List<Product> allProducts() {
         return productService.getProductStock();
     }
+
+    public void linkUserToCart(Principal principal) throws ParseException {
+        // get logged in user from database
+        if (user == null) {
+            user = userService.getUserByName(principal.getName());
+        }
+
+        if (order == null) {
+            order = new Order(MyUtils.DATE_FMT.parse("02/01/2021"), 0.07, user);
+            order.setUser(user);
+            user.addOrder(order);
+            userService.saveUser(user);
+            orderService.saveOrder(order);
+        }
+    }
+
+    public void addToOrder(Order order, Product product) {
+        orderService.addProduct(order, product);
+    }
+
 }

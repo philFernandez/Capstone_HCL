@@ -18,8 +18,17 @@ public class OrderService {
         repository.save(order);
     }
 
+    public void addProduct(Order order, Product product) {
+        order.addProduct(product);
+        repository.save(order);
+    }
+
     public void addUserToOrder(Order order, User user) {
         order.setUser(user);
+    }
+
+    public void saveOrder(Order order) {
+        repository.save(order);
     }
 }
 

@@ -1,5 +1,8 @@
 package com.hcl.capstone.controller;
 
+import java.security.Principal;
+import java.text.ParseException;
+import javax.servlet.http.HttpServletRequest;
 import com.hcl.capstone.model.User;
 import com.hcl.capstone.model.UserRepository;
 import com.hcl.capstone.service.ProductService;
@@ -54,7 +57,13 @@ public class MainController {
     }
 
     @GetMapping("/products")
-    public ModelAndView products() {
+    public ModelAndView products(HttpServletRequest request) {
+        Principal principal = request.getUserPrincipal();
+        try {
+            cartService.linkUserToCart(principal);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
         return new ModelAndView("products", "cart",
                 cartService);
     }

@@ -1,5 +1,6 @@
 package com.hcl.capstone.model;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Column;
@@ -55,5 +56,12 @@ public class Order {
         } else {
             this.products.addAll(products);
         }
+    }
+
+    public void addProduct(Product product) {
+        if(this.products == null) {
+            this.products = new ArrayList<>();
+        }
+        this.products.add(product);
     }
 }
