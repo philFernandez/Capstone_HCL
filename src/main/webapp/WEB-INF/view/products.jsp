@@ -34,7 +34,7 @@
       %>
     <h1 class="display-1 p-3"
         align="center">Our Products</h1>
-        <!-- <h1 class="display-6" align="center">Welcome ${cart.getPrincipal().getName()}!</h1> -->
+    <!-- <h1 class="display-6" align="center">Welcome ${cart.getPrincipal().getName()}!</h1> -->
     <div class="container border border-3 p-4">
       <div class="container">
         <ul class="nav nav-tabs">
@@ -78,40 +78,17 @@
               <p class="card-text">${product.category}</p>
             </div>
             <div class="container">
-              <!-- Button trigger modal -->
-              <button type="button"
-                      class="btn btn-primary"
-                      data-bs-toggle="modal"
-                      data-bs-target="#exampleModal${product.id}">Buy <i class="bi bi-cart3"></i></button>
+              <form action="/products/${product.id}"
+                    method="GET"
+                    >
+                <button type="submit"
+                        class="btn btn-primary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#exampleModal${product.id}">
+                  Buy <i class="bi bi-cart3"></i>
+                </button>
+              </form>
 
-              <!-- Modal -->
-              <div class="modal fade"
-                   id="exampleModal${product.id}"
-                   tabindex="-1"
-                   aria-labelledby="exampleModalLabel"
-                   aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title"
-                          id="exampleModal${product.id}">Added to cart!</h5>
-                      <button type="button"
-                              class="btn-close"
-                              data-bs-dismiss="modal"
-                              aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                      <p>${product.name}</p>
-                    </div>
-                    <div class="modal-footer">
-                      <a href="/order" class="btn btn-success">Go to cart</a>
-                      <button type="button"
-                              class="btn btn-secondary"
-                              data-bs-dismiss="modal">Close</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
           <br>

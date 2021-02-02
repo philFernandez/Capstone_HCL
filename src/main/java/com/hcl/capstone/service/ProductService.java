@@ -46,5 +46,9 @@ public class ProductService {
             return null;
         }
     }
+
+    public List<Product> getOrderedProducts(Long id) {
+        return repository.getByProductId(id);
+    }
 }
 

@@ -12,6 +12,8 @@ import org.springframework.stereotype.Service;
 public class OrderService {
     @Autowired
     private OrderRepository repository;
+    @Autowired 
+    private ProductService productService;
 
     public void addProducts(Order order, List<Product> products) {
         order.setProducts(products);
@@ -19,7 +21,8 @@ public class OrderService {
     }
 
     public void addProduct(Order order, Product product) {
-        order.addProduct(product);
+        Product productForOrder = productService.getProductByID(product.getId());
+        order.addProduct(productForOrder);
         repository.save(order);
     }
 

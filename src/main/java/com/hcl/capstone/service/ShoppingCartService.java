@@ -85,6 +85,7 @@ public class ShoppingCartService {
         return productService.getProductStock();
     }
 
+
     public void linkUserToCart(Principal principal) throws ParseException {
         // get logged in user from database
         if (user == null) {
@@ -100,8 +101,12 @@ public class ShoppingCartService {
         }
     }
 
-    public void addToOrder(Order order, Product product) {
-        orderService.addProduct(order, product);
+    public void addToOrder(Product product) {
+        orderService.addProduct(this.order, product);
+    }
+
+    public List<Product> getShoppingCart() {
+        return productService.getOrderedProducts(order.getId());
     }
 
 }
