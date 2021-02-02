@@ -3,17 +3,25 @@ package com.hcl.capstone.controller;
 import java.security.Principal;
 import java.text.ParseException;
 import javax.servlet.http.HttpServletRequest;
+import com.hcl.capstone.model.Product;
 import com.hcl.capstone.model.User;
 import com.hcl.capstone.model.UserRepository;
 import com.hcl.capstone.service.ProductService;
 import com.hcl.capstone.service.ShoppingCartService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.ModelAndView;
+import java.util.List;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 
 @Controller
@@ -86,5 +94,9 @@ public class MainController {
         return new ModelAndView("shoppingcart", "cart", cartService);
     }
 
+    @GetMapping("/about")
+    public String about() {
+        return "about";
+    }
 
 }

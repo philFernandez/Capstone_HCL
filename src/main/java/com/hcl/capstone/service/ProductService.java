@@ -50,5 +50,13 @@ public class ProductService {
     public List<Product> getOrderedProducts(Long id) {
         return repository.getByProductId(id);
     }
+
+    public List<Product> all(String keyword) {
+        if(keyword != null) {
+            return repository.search(keyword);
+        } else {
+            return repository.findAll();
+        }
+    }
 }
 

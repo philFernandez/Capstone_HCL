@@ -4,3 +4,8 @@ h1 {
     font-family: 'Unkempt', cursive;
     text-shadow: 1px 1px 3px darkblue;
 }
+
+p.about {
+    font-family: 'Hachi Maru Pop', cursive;
+    font-size: larger;
+}
