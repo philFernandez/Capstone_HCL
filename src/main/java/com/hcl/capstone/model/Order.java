@@ -49,4 +49,11 @@ public class Order {
         this.user = user;
     }
 
+    public void setProducts(List<Product> products) {
+        if(this.products == null) {
+            this.products = products;
+        } else {
+            this.products.addAll(products);
+        }
+    }
 }

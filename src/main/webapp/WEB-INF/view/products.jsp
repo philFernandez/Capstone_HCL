@@ -103,7 +103,7 @@
                       <p>${product.name}</p>
                     </div>
                     <div class="modal-footer">
-                      <a href="/cart" class="btn btn-success">Go to cart</a>
+                      <a href="/order" class="btn btn-success">Go to cart</a>
                       <button type="button"
                               class="btn btn-secondary"
                               data-bs-dismiss="modal">Close</button>
